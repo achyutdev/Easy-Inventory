@@ -8,7 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import easy.controller.dao.ProductDAO;
+import easy.dao.ProductDAO;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

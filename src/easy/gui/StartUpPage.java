@@ -1,6 +1,5 @@
 package easy.gui;
 
-import java.sql.*;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -9,6 +8,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -31,28 +31,28 @@ public class StartUpPage extends JFrame {
 	private JTextField logopath;
 	private String companylogopath =null;
 	private Connection myConn;
-	/**
-	 * @wbp.nonvisual location=134,314
-	 */
+
 	private final Component verticalStrut = Box.createVerticalStrut(20);
+
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/InventoryMgtSys","root","achyut");
-//					Statement mystmt = myConn.createStatement();
-//					ResultSet myResult = mystmt.executeQuery("Select * from products");
-//					while(myResult.next()){
-//						System.out.println(myResult.getString("name")+" , "+ myResult.getString("price"));
-//					}
-					StartUpPage frame = new StartUpPage();
-					frame.setVisible(true);
+					if(isThisANewCompany()) {
+						StartUpPage frame = new StartUpPage();
+						frame.setVisible(true);
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}
+
+			private boolean isThisANewCompany() {
+				return true;
 			}
 		});
 	}
@@ -62,7 +62,7 @@ public class StartUpPage extends JFrame {
 	 */
 	public StartUpPage() {
 		setIconImage(
-				Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\rsz_easyInlogo.png"));
+				Toolkit.getDefaultToolkit().getImage("easy/resource/rsz_easyInlogo.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

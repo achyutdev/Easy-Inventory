@@ -1,0 +1,19 @@
+
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'easy.gui.StartUpPage.java'
+    }
+}
+dependencies {
+
+		compile files('lib/jgoodies-forms-1.8.0-sources.jar')
+		compile files('lib/mysql-connector-java-5.1.38-bin.jar')
+		
+		compile group: 'org.springframework', name: 'spring-context', version: '5.0.8.RELEASE'
+
+}

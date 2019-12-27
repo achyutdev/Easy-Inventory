@@ -23,9 +23,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import easy.classes.Product;
-import easy.controller.dao.ProductDAO;
-import easy.controller.dao.SecureRandomTagGen;
+import easy.dao.ProductDAO;
+import easy.model.Product;
+import easy.util.SecureRandomTagGen;
 
 public class AddNewProductItem extends JDialog {
 

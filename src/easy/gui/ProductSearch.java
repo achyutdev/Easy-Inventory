@@ -28,8 +28,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import easy.classes.Product;
-import easy.controller.dao.ProductDAO;
+import easy.dao.ProductDAO;
+import easy.model.Product;
 
 public class ProductSearch extends JFrame {
 
@@ -482,7 +482,7 @@ public class ProductSearch extends JFrame {
 		reportPanel.setLayout(gl_reportPanel);
 
 		JLabel lbllogoName = new JLabel(" - Easy Inventory");
-		lbllogoName.setIcon(new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_2easyinlogo.png"));
+		lbllogoName.setIcon(new ImageIcon("easy/resource/rsz_2easyinlogo.png"));
 		lbllogoName.setForeground(SystemColor.textHighlight);
 		lbllogoName.setFont(new Font("Segoe Script", Font.BOLD, 24));
 		panel_1.add(lbllogoName);

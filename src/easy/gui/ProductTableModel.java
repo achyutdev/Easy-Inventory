@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import easy.classes.Product;
+import easy.model.Product;
 
 public class ProductTableModel extends AbstractTableModel {
 
