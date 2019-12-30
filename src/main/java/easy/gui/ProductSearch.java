@@ -251,7 +251,7 @@ public class ProductSearch extends JFrame {
 		lblReport = new JLabel("Report !");
 		lblReport.setForeground(new Color(160, 82, 45));
 		lblReport.setFont(new Font("Segoe Script", Font.BOLD, 20));
-		lblReport.setIcon(new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_billingreport.png"));
+		lblReport.setIcon(new ImageIcon("rsz_billingreport.png"));
 
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.setForeground(Color.RED);
@@ -315,7 +315,7 @@ public class ProductSearch extends JFrame {
 				}
 			}
 		});
-		btnSell.setIcon(new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_sell.png"));
+		btnSell.setIcon(new ImageIcon("rsz_sell.png"));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -482,7 +482,7 @@ public class ProductSearch extends JFrame {
 		reportPanel.setLayout(gl_reportPanel);
 
 		JLabel lbllogoName = new JLabel(" - Easy Inventory");
-		lbllogoName.setIcon(new ImageIcon("easy/resource/rsz_2easyinlogo.png"));
+		lbllogoName.setIcon(new ImageIcon("resource/rsz_2easyinlogo.png"));
 		lbllogoName.setForeground(SystemColor.textHighlight);
 		lbllogoName.setFont(new Font("Segoe Script", Font.BOLD, 24));
 		panel_1.add(lbllogoName);
