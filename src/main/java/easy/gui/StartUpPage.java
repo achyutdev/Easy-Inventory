@@ -1,26 +1,16 @@
 package easy.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Toolkit;
+import easy.dao.ProductDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
+import static java.awt.EventQueue.invokeLater;
 
 public class StartUpPage extends JFrame {
 
@@ -39,20 +29,27 @@ public class StartUpPage extends JFrame {
 	 */
 	
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+		invokeLater(new Runnable() {
+
+			@Autowired
+			private ProductDAO productDAO;
+
 			public void run() {
 				try {
 					if(isThisANewCompany()) {
 						StartUpPage frame = new StartUpPage();
 						frame.setVisible(true);
+					}else{
+						LogIn logIn = new LogIn();
+						logIn.setVisible(true);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 
-			private boolean isThisANewCompany() {
-				return true;
+			private boolean isThisANewCompany() throws Exception {
+				return  productDAO.getAllProduct().isEmpty();
 			}
 		});
 	}
@@ -75,7 +72,7 @@ public class StartUpPage extends JFrame {
 
 		JLabel lblEasyInventory = new JLabel("- Easy Inventory");
 		lblEasyInventory.setFont(new Font("Segoe Script", Font.BOLD, 20));
-		ImageIcon iconEI = new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_easyInlogo.png");
+		ImageIcon iconEI = new ImageIcon("rsz_easyInlogo.png");
 		lblEasyInventory.setIcon(iconEI);
 		titlePanel.add(lblEasyInventory);
 

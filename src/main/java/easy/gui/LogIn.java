@@ -61,7 +61,7 @@ public class LogIn extends JDialog {
 		
 	}
 	public LogIn() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_password_icon.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("rsz_password_icon.png"));
 		setTitle("Login");
 		setBounds(100, 100, 450, 256);
 		getContentPane().setLayout(new BorderLayout());
@@ -77,7 +77,7 @@ public class LogIn extends JDialog {
 		
 		JLabel lblLoginToEasy = new JLabel("Login to Easy Inventory");
 		lblLoginToEasy.setForeground(SystemColor.textHighlight);
-		lblLoginToEasy.setIcon(new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_login.png"));
+		lblLoginToEasy.setIcon(new ImageIcon("rsz_login.png"));
 		lblLoginToEasy.setFont(new Font("Segoe Script", Font.BOLD, 20));
 		
 		passwordField = new JPasswordField();
@@ -121,15 +121,13 @@ public class LogIn extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Login");
-				okButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						
-						if(usernameField.getText().equals("admin")&&passwordField.getPassword().equals("admin")){
-							dispose();
-						}
-						
-						
+				okButton.addActionListener(e -> {
+
+					if(usernameField.getText().equals("admin")&&passwordField.getPassword().equals("admin")){
+						dispose();
 					}
+
+
 				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
@@ -138,6 +136,7 @@ public class LogIn extends JDialog {
 			{
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
+				cancelButton.addActionListener(e -> System.exit(0));
 				buttonPane.add(cancelButton);
 			}
 		}

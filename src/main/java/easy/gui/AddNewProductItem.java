@@ -64,13 +64,13 @@ public class AddNewProductItem extends JDialog {
 			JLabel lblAddNewItem = new JLabel("   Update Product Details");
 			lblAddNewItem.setFont(new Font("Segoe Script", Font.BOLD, 18));
 			lblAddNewItem
-					.setIcon(new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_update-icon.png"));
+					.setIcon(new ImageIcon("rsz_update-icon.png"));
 			addTitleField.add(lblAddNewItem);
 		} else {
 			JLabel lblAddNewItem = new JLabel("   Add Product Details");
 			lblAddNewItem.setFont(new Font("Segoe Script", Font.BOLD, 18));
 			lblAddNewItem
-					.setIcon(new ImageIcon("C:\\Users\\Dev\\workspace\\InventoryMgtSys\\lib\\rsz_1add-item-icon.png"));
+					.setIcon(new ImageIcon("rsz_1add-item-icon.png"));
 			addTitleField.add(lblAddNewItem);
 		}
 	}
